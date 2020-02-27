@@ -13,6 +13,7 @@ int main( int argc,char *argv[] ){
     GtkWidget *menu_items;
     GtkWidget *vbox;
     GtkWidget *button;
+    GtkWidget *textBox;
     char buf[128];
     int i;
 
@@ -51,11 +52,8 @@ int main( int argc,char *argv[] ){
     gtk_box_pack_start (GTK_BOX (vbox), menu_bar, FALSE, FALSE, 2);
     gtk_widget_show (menu_bar);
 
-    button = gtk_button_new_with_label ("press me");
-    g_signal_connect_swapped (button, "event",G_CALLBACK (button_press), menu);
-    gtk_box_pack_end (GTK_BOX (vbox), button, TRUE, TRUE, 2);
-    gtk_widget_show (button);
-
+    textBox = gtk_text_view_new();
+    gtk_widget_show(textBox);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu_bar), root_menu);
 
     gtk_widget_show (window);
@@ -70,7 +68,7 @@ static gboolean button_press( GtkWidget *widget,GdkEvent *event ){
 
     if (event->type == GDK_BUTTON_PRESS) {
         GdkEventButton *bevent = (GdkEventButton *) event; 
-        gtk_menu_popup_at_pointer (GTK_MENU (widget), NULL, NULL, NULL, NULL,bevent->button, bevent->time);
+        gtk_menu_popup(GTK_MENU (widget), NULL, NULL, NULL, NULL,bevent->button, bevent->time);
         return TRUE;
     }
 
