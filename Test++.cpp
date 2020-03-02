@@ -12,8 +12,6 @@ struct menuButton{
 int main( int argc,char *argv[] ){
 
     GtkWidget *window;
-    GtkWidget *tool_bar;
-
     gtk_init (&argc, &argv);
 
     /* create a new window */
@@ -22,26 +20,29 @@ int main( int argc,char *argv[] ){
     gtk_window_set_title (GTK_WINDOW (window), "encEdit");
     g_signal_connect (window, "delete-event",G_CALLBACK (gtk_main_quit), NULL);
 
-    tool_bar = gtk_toolbar_new();
-
-    GtkWidget *file_button;
-    file_button = gtk_tool_item_new();
 
 
-    gtk_widget_show (window);
+    gtk_widget_show_all(window);
     gtk_main ();
     return 0;
 }
 
 
-/*static gboolean button_press( GtkWidget *widget, GdkEvent *event ){
+/*static gboolean button_press( GtkWBidget *widget, GdkEvent *event ){
 
     if (event->type == GDK_BUTTON_PRESS) {
         gtk_menu_popup_at_widget(GTK_MENU (widget),*root_menu, 0, 0,NULL);
         return TRUE;
     }
-
-    return FALSE;
+    return FALSE;{
+            "label": "gcc Gtk",
+            "type": "shell",
+            "command": "gcc `pkg-config --cflags gtk+-3.0` -o Test Test.c `pkg-config --libs gtk+-3.0`",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
 }*/
 
 
