@@ -25,7 +25,7 @@ int main(int argc,char *argv[]){
 
     GtkWidget *window, *menu_bar, *menu_item, *file_menu, *help_menu , *box, *button, *text_box;
     gtk_init (&argc, &argv);
-
+    
     /* create a new window */
     window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
     gtk_widget_set_size_request (GTK_WIDGET (window), 500, 400);
