@@ -1,1 +1,1 @@
-Single Encryption, SHA-256
+Single Encryption, AES-256

@@ -12,7 +12,6 @@
             "name": "include paths",
             "intelliSenseMode": "${default}",
             "includePath": [
-
                 "/usr/include/gtk-3.0",
                 "/usr/include/at-spi2-atk/2.0",
                 "/usr/include/at-spi-2.0",
@@ -36,8 +35,8 @@
                 "/usr/include/blkid",
                 "/usr/include/uuid",
                 "/usr/include/glib-2.0",
-                "/usr/lib/glib-2.0/include"
-
+                "/usr/lib/glib-2.0/include",
+                "/usr/bin"
             ],
             "compilerPath": "/usr/local/bin/g++",
             "cStandard": "c11",
